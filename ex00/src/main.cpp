@@ -5,16 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: bazuara <bazuara@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/19 13:50:02 by bazuara           #+#    #+#             */
-/*   Updated: 2024/10/17 15:14:19 by bazuara          ###   ########.fr       */
+/*   Created: 2025/01/20 16:53:16 by bazuara           #+#    #+#             */
+/*   Updated: 2025/01/20 17:09:32 by bazuara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <easyfind.h>
-#include <iostream>
-#include <vector>
+#include <easyfind.hpp>
 
-int main()
+int main(void)
 {
     std::vector<int> v;
     v.push_back(1);
@@ -23,23 +21,26 @@ int main()
     v.push_back(4);
     v.push_back(5);
 
-    try
-    {
-        std::vector<int>::iterator it = easyfind(v, 3);
-        std::cout << "Value found: " << *it << std::endl;
+    std::vector<int> v2;
+    v2.push_back(6);
+    v2.push_back(7);
+    v2.push_back(8);
+    v2.push_back(9);
+    v2.push_back(10);
+
+    try {
+    std::vector<int>::iterator it = easyfind(v, 3);
+    std::cout << "Value found: " << *it << std::endl;
     }
-    catch (std::exception &e)
-    {
+    catch (std::exception &e) {
         std::cout << "Value not found" << std::endl;
     }
 
-    try
-    {
-        std::vector<int>::iterator it = easyfind(v, 42);
+    try {
+        std::vector<int>::iterator it = easyfind(v2, 3);
         std::cout << "Value found: " << *it << std::endl;
     }
-    catch (std::exception &e)
-    {
+    catch (std::exception &e) {
         std::cout << "Value not found" << std::endl;
     }
 
