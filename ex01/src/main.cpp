@@ -6,7 +6,7 @@
 /*   By: bazuara <bazuara@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 17:50:23 by bazuara           #+#    #+#             */
-/*   Updated: 2025/01/20 18:07:47 by bazuara          ###   ########.fr       */
+/*   Updated: 2025/01/23 15:21:27 by bazuara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,17 @@ int main() {
     } catch (std::exception &e) {
         std::cerr << "Exception caught: " << e.what() << std::endl;
     }
+
+    // tests on pdf
+    std::cout << "Tests on pdf" << std::endl;
+    Span sp = Span(5);
+    sp.addNumber(6);
+    sp.addNumber(3);
+    sp.addNumber(17);
+    sp.addNumber(9);
+    sp.addNumber(11);
+    std::cout << sp.shortestSpan() << std::endl;
+    std::cout << sp.longestSpan() << std::endl;
 
     return 0;
 }
