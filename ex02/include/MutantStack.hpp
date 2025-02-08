@@ -6,7 +6,7 @@
 /*   By: bazuara <bazuara@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 15:42:43 by bazuara           #+#    #+#             */
-/*   Updated: 2025/02/07 14:35:07 by bazuara          ###   ########.fr       */
+/*   Updated: 2025/02/08 11:30:36 by bazuara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,23 +19,23 @@
 template <typename T>
 class MutantStack : public std::stack<T> {
  public:
-  MutantStack(void) : std::stack<T>() {};
-  MutantStack(const MutantStack &copy) : std::stack<T>(copy) {};
-  virtual ~MutantStack(void) {};
-  MutantStack &operator=(const MutantStack &op) {
-    if (this == &op) return *this;
-    std::stack<T>::operator=(op);
+  MutantStack(void) : std::stack<T>() {}
+  MutantStack(const MutantStack &copy) : std::stack<T>(copy) {}
+  virtual ~MutantStack(void) {}
+  MutantStack &operator=(const MutantStack &otherMutant) {
+    if (this == &otherMutant) return *this;
+    std::stack<T>::operator=(otherMutant);
     return *this;
   }
 
   typedef typename std::stack<T>::container_type::iterator iterator;
   typedef typename std::stack<T>::container_type::const_iterator const_iterator;
 
-  iterator begin(void) { return std::stack<T>::c.begin(); };
-  iterator end(void) { return std::stack<T>::c.end(); };
+  iterator begin(void) { return std::stack<T>::c.begin(); }
+  iterator end(void) { return std::stack<T>::c.end(); }
 
-  const_iterator begin(void) const { return std::stack<T>::c.begin(); };
-  const_iterator end(void) const { return std::stack<T>::c.end(); };
+  const_iterator begin(void) const { return std::stack<T>::c.begin(); }
+  const_iterator end(void) const { return std::stack<T>::c.end(); }
 };
 
 #endif  // MUTANTSTACK_HPP
